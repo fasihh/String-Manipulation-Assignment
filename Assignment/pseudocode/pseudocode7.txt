@@ -1,0 +1,13 @@
+DECLARE str1 : STRING
+
+str1 ← ""
+
+OUTPUT "Enter your string: "
+INPUT str1
+
+IF LENGTH(str1) > 2
+    THEN
+	OUTPUT LEFT(str1, 2) & RIGHT(str1, 2)
+ELSE
+	OUTPUT "Text too short: " & str1
+ENDIF

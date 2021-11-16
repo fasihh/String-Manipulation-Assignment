@@ -1,0 +1,39 @@
+DECLARE currentCount, nextCount, highest, occurence : INTEGER
+DECLARE currentChar, nextChar, mostChar : CHAR
+DECLARE str1 : STRING
+
+currentChar  ← ''
+currentCount ← 0
+nextChar ← ''
+nextCount ← 0
+highest ← 0
+occurence ← 0
+str1 ← ""
+mostChar ← ''
+
+OUTPUT "Enter your string: "
+INPUT UPPER(str1)
+
+FOR currentCount ← 1 TO LENGTH(str1)
+	currentChar ← MID(str1, currentCount, 1)
+	occurence ← 0
+
+	FOR nextCount ← 1 TO LENGTH(str1)
+		nextChar ← MID(str1, nextCount, 1)
+		
+		IF currentChar = nextChar
+		    THEN
+			occurence ← occurence + 1
+		ENDIF
+	NEXT
+	
+	IF occurence > highest 
+	    THEN
+		mostChar ← currentChar
+		highest ← occurence
+	ENDIF
+
+NEXT
+
+OUTPUT "Your most occuring character is: " & mostChar
+OUTPUT "By this much: " & highest

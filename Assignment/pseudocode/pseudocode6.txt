@@ -1,0 +1,15 @@
+DECLARE donutCount, count : INTEGER
+
+donutCount = 0
+count = 0
+
+OUTPUT "Number of donuts: "
+INPUT donutCount
+
+IF donutCount >= 10 
+    THEN
+	OUTPUT "Number of Donuts: many" 
+ELSE
+	OUTPUT "Number of Donuts: ", donutCount
+ENDIF
+

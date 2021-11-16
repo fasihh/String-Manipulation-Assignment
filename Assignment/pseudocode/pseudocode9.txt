@@ -1,0 +1,31 @@
+DECLARE str1, str2, strAfter, strBefore : STRING
+DECLARE count : INTEGER
+DECLARE thisChar : CHAR
+
+str1 ← ""
+str2 ← ""
+count ← 0
+thisChar ← ''
+
+OUTPUT "Your first string: "
+INPUT str1
+OUTPUT "Your second string: "
+INPUT str2 
+
+strBefore ← LEFT(str2, 2)
+strAfter ← LEFT(str1, 2)
+
+FOR count ← 3 TO LENGTH(str1)
+	thisChar ← MID(str1, count, 1)
+	strBefore ← strBefore & thisChar
+NEXT
+
+count = 0 
+thisChar = ''
+
+For count ← 3 to LENGTH(str2)
+	thisChar ← MID(str2, count, 1)
+	strAfter ← strAfter & thisChar 
+NEXT
+
+OUTPUT "Your processed string: " & strBefore & " " & strAfter 

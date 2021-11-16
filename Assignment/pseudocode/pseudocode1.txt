@@ -1,0 +1,33 @@
+DECLARE str1 : STRING 
+DECLARE alphabets : STRING
+DECLARE count : INTEGER
+DECLARE confirm : BOOLEAN
+DECLARE thisChar : CHAR
+
+confirm ← TRUE
+count ← 0
+thisChar ← ''
+alphabets ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+str1 ← ""
+
+OUTPUT "Write your string: "
+INPUT str1
+str1 ← UPPER(str1)
+
+FOR count ← 1 to LENGTH(str1)
+	thisChar ← MID(alphabets, count, 1) 
+
+	IF LOCATE(str1, thisChar) = 0 
+	    THEN
+		confirm = FALSE
+	ENDIF
+NEXT
+
+IF confirm = FALSE 
+    THEN
+	OUTPUT "Your string doesnt have all of the ABCs"
+ELSE
+	OUTPUT "Your string has all of the ABCs"
+ENDIF
+
+

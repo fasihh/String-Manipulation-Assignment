@@ -1,0 +1,35 @@
+DECLARE str1 : STRING
+DECLARE count : INTEGER
+DECLARE thisChar : CHAR
+DECLARE str2 : STRING 
+DECLARE replace1 : CHAR
+DECLARE char1 : CHAR
+
+replace1 = ''
+str2 = ""
+thisChar = ''
+count = 0
+str1 = ""
+char1 = ''
+
+OUTPUT "Enter string: "
+INPUT str1 
+
+OUTPUT "Enter character(s) to be replaced: "
+INPUT replace1 
+
+OUTPUT "Enter character to be replaced with: "
+INPUT char1
+
+FOR count ← 1 to LENGHT(str1)
+	thisChar = MID(str1, count, 1)
+	IF thisChar = replace1 
+	    THEN
+		str2 = str2 & char1
+	ELSE
+		str2 = str2 & thisChar
+	ENDIF
+NEXT
+
+OUTPUT "Edited string: "
+

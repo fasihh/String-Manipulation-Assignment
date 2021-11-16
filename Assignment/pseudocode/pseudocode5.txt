@@ -1,0 +1,35 @@
+DECLARE str1 : STRING 
+DECLARE thisChar : CHAR 
+DECLARE aCount, eCount, iCount, oCount, uCount, count : INTEGER
+
+str1 = ""
+thisChar = ''
+aCount = 0
+eCount = 0
+iCount = 0
+oCount = 0
+uCount = 0
+count = 0
+
+OUTPUT "Enter your string here: " 
+INPUT str1
+
+FOR count ← 1 TO LENGTH(str1) 
+	thisChar = UPPER(MID(str1, count, 1))
+	
+	SELECT thisChar
+		CASE 'A'
+		    aCount = aCount + 1
+		CASE 'E'
+		    eCount = eCount + 1
+		CASE 'I'
+		    iCount = iCount + 1
+		CASE 'O'
+		    oCount = oCount + 1
+		CASE 'U'
+		   uCount = uCount + 1
+	END SELECT
+NEXT
+
+OUTPUT "Your string had this many As, Es, Is, Os and Us: {0}, {1}, {2}, {3} and {4}", aCount, eCount, iCount, oCount, uCount
+

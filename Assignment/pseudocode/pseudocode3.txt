@@ -1,0 +1,40 @@
+DECLARE str1 : STRING
+DECLARE thisChar : CHAR
+DECLARE alphabetsCount : INTEGER
+DECLARE numberCount : INTEGER
+DECLARE otherCount : INTEGER
+DECLARE count : INTEGER
+DECLARE ascval : INTEGER
+
+str1 ← ""
+thisChar ← ''
+alphabetsCount ← 0
+numberCount ← 0
+otherCount ← 0
+count ← 0
+ascval ← 0
+
+OUTPUT "Enter your string: "
+INPUT str1
+
+FOR count ← 1 to LENGTH(str1)
+	thisChar ← MID(str1, count, 1) 
+	ascval ← ASC(thisChar) 
+	IF ascval =>65 AND ascval =< 90 
+	    THEN
+		alphabetsCount ← alphabetsCount + 1
+	ELSE IF ascval => 97 AND ascval =< 122
+	    THEN
+		alphabetsCount ← alphabetsCount + 1
+	ELSE IF ascval => 40 AND ascval =< 57
+	    THEN 
+		numberCount ← numberCount + 1
+	ELSE 
+		otherCount ← otherCount + 1
+	END IF
+NEXT
+
+OUTPUT "Total characters in your string: " & LENGTH(str1)
+OUTPUT "Total alphabets in your string: " & alphaCount
+OUTPUT "Total integers in your string: " & numberCount
+OUTPUT "Total special characters in your string: " otherCount 

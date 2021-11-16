@@ -1,0 +1,42 @@
+DECLARE str1 : STRING
+DECLARE str2 : STRING 
+DECLARE thisChar : CHAR
+DECLARE count : INTEGER
+DECLARE replace1 : CHAR
+
+str1 ← ""
+str2 ← ""
+thisChar ← ''
+replace1 ← ''
+count ← 0
+
+OUTPUT "Enter your string: "
+INPUT str1 
+OUTPUT "Enter character that needs to be replaced: "
+INPUT replace1
+
+FOR count ← 1 TO LENGTH(str1)
+	thisChar ← MID(str1, count, 1)
+
+	IF thisChar = replace1 
+	    THEN
+		str2 ← str2 & replace1
+		count ← count + 1
+		EXIT FOR
+	ELSE
+		str2 ← str2 & thisChar
+	ENDIF
+NEXT
+
+FOR count ← count TO LENGTH(str1)
+	thisChar ← MID(str1, count, 1)
+	
+	IF thisChar = replace1 
+	    THEN
+		str2 ← str2 & "*"
+	ELSE 
+		str2 ← str2 & thisChar
+	ENDIF
+NEXT
+
+OUTPUT "Processed string: " & str2

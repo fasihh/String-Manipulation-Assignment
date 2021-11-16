@@ -1,0 +1,26 @@
+DECLARE str1, str2, str3, str4 : STRING
+DECLARE bad1, not1 : INTEGER
+
+str1 ← ""
+not1 ← 0
+bad1 ← 0
+str2 ← ""
+str3 ← ""
+str4 ← ""
+
+OUTPUT "Enter your string please: "
+INPUT LOWER(str1)
+
+not1 ← LOCATE(str1, "not")
+bad1 ← LOCATE(str1, "bad")
+
+IF LOCATE(str1, "not") <> 0 AND LOCATE(str1, "bad") <> 0
+    THEN
+	str2 ← MID(str1, 1, LENGTH(str1) - (LENGTH(str1) - not1 + 1))
+	str3 ← MID(str1, bad1 + 3, LENGTH(str1) - bad1)
+	str4 ← str2 & "good" & str3
+ENDIF
+
+OUTPUT "Processed string: " & str4
+
+
